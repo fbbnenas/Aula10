@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Formulário</title>
+<link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+
+<script type="text/javascript">
+	function bloquearTipoPedras(){
+		document.getElementById('tipo_pedras').disabled = true;		
+	}
+	function desbloquearTipoPedras(){
+		document.getElementById('tipo_pedras').disabled = false;
+	}
+</script>
+
+<form id="formulario" method="GET" action="bla.php">
+<fieldset>
+<legend>Pedido</legend>
+	<table>
+		<tr>
+			<td>
+				<label>Número de pedras: </label>
+			</td>
+			<td>
+				<input id="num_pedras" name="num_pedras" type="number" min= "0" step="1" size="2" required="required"/>
+			</td>
+		</tr>
+			<td>
+				<label>Tamanho de pedras: </label>
+			</td>
+			<td>
+				<select name="tam_pedras" id="tam_pedras required="required">
+					<option value="1">1</option>
+					<option value="1,5">1,5</option>
+					<option value="2">2</option>
+					<option value="2,5">2,5</option>
+					<option value="3" selected="">3</option>
+					<option value="3,5">3,5</option>
+					<option value="4">4</option>
+					<option value="4,5">4,5</option>
+					<option value="5">5</option>
+					<option value="5,5">5,5</option>
+					<option value="6">6</option>
+					<option value="6,5">6,5</option>
+					<option value="7">7</option>
+				</select>
+			</td>
+		</tr>
+		<tr>	
+			<td>
+				<label>Nome: </label> 
+			</td>
+			<td>
+			<input name="nome" type="text" pattern="[a-z\s]+$" required="required"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>A cor do céu: </label> 
+			</td>
+			<td>
+				<input id="corCeu1" name="corCeu1" type="text" required="required"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Outra cor para o céu: </label>
+			</td>
+			<td>
+				<input id="corCeu2" name="corCeu2" type="text"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Utilizar pedras sortidas?</label>
+			</td>
+			<td>
+				<label><input id="tipo_pedra_sortida" name="tipo_pedra_sortida" type="radio" value="sim" onchange="bloquearTipoPedras()">Sim</label>
+				<label><input id="tipo_pedra_sortida" name="tipo_pedra_sortida" type="radio" value="nao" onchange="desbloquearTipoPedras()">Não</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Tipo de pedras: </label>
+			</td>
+			<td>	
+				<select name="tipo_pedras" id="tipo_pedras">
+					<option value="marroada">Marroada</option>
+					<option value="ametista">Ametista</option>
+					<option value="topazio">Topazio</option>
+					<option value="espinela">Espinela</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</fieldset>
+<table>
+	<tr>
+		<td>
+			<input type="submit" value="Enviar">
+		</td>
+		<td>
+			<input type="reset" value="Limpar">
+		</td>
+	</tr>
+</table>
+
+</form>
+
+</body>
+
+</html>
